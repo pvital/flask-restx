@@ -48,29 +48,32 @@ You need to install some dependencies to develop on flask-restx:
 
 .. code-block:: console
 
-    $ pip install -e .[dev]
+    $ pip install -e ".[dev]"
 
-An [Invoke](http://www.pyinvoke.org/) ``tasks.py`` is provided to simplify the common tasks:
+An `Invoke <https://www.pyinvoke.org/>`_ ``tasks.py`` is provided to simplify the common tasks:
 
 .. code-block:: console
 
     $ inv -l
     Available tasks:
 
-      all      Run tests, reports and packaging
-      assets   Fetch web assets -- Swagger. Requires NPM (see below)
-      clean    Cleanup all build artifacts
-      cover    Run tests suite with coverage
-      demo     Run the demo
-      dist     Package for distribution
-      doc      Build the documentation
-      qa       Run a quality report
-      test     Run tests suite
-      tox      Run tests against Python versions
+      all         Run tests, reports and packaging
+      assets      Fetch web assets
+      benchmark   Run benchmarks
+      clean       Cleanup all build artifacts
+      cover       Run tests suite with coverage
+      demo        Run the demo
+      deps        Install or update development dependencies
+      dist        Package for distribution
+      doc         Build the documentation
+      qa          Run a quality report
+      test        Run tests suite
+      tox         Run tests against Python versions
 
 To ensure everything is fine before submission, use ``tox``.
 It will run the test suite on all the supported Python version
-and ensure the documentation is generating.
+and ensure the documentation is generating.kl;|
+
 
 .. code-block:: console
 

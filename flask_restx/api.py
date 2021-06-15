@@ -34,7 +34,7 @@ from werkzeug.exceptions import (
     NotAcceptable,
     InternalServerError,
 )
-from werkzeug.wrappers import BaseResponse
+from werkzeug.wrappers import Response
 
 from . import apidoc
 from .mask import ParseError, MaskError
@@ -395,7 +395,7 @@ class Api(object):
         @wraps(resource)
         def wrapper(*args, **kwargs):
             resp = resource(*args, **kwargs)
-            if isinstance(resp, BaseResponse):
+            if isinstance(resp, Response):
                 return resp
             data, code, headers = unpack(resp)
             return self.make_response(data, code, headers=headers)
