@@ -175,4 +175,4 @@ class NamespaceTest(object):
         }
 
         resp = client.post_json("/apples/validation/", data, status=400)
-        assert re.match("Additional properties are not allowed \(u*'agge' was unexpected\)", resp["errors"][""])
+        assert re.match(r"Additional properties are not allowed \(u*'agge' was unexpected\)", resp["errors"][""])

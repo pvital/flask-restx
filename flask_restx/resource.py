@@ -3,7 +3,7 @@ from __future__ import unicode_literals
 
 from flask import request
 from flask.views import MethodView
-from werkzeug.wrappers import BaseResponse
+from werkzeug.wrappers import Response
 
 from .model import ModelBase
 
@@ -43,7 +43,7 @@ class Resource(MethodView):
 
         resp = meth(*args, **kwargs)
 
-        if isinstance(resp, BaseResponse):
+        if isinstance(resp, Response):
             return resp
 
         representations = self.representations or {}
