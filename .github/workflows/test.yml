@@ -12,10 +12,10 @@ jobs:
   checks:
     runs-on: ubuntu-latest
     steps:
-      - name: Set up Python 3.8
+      - name: Set up Python 3.9
         uses: actions/setup-python@v1
         with:
-          python-version: 3.8
+          python-version: 3.9
       - name: Checkout code
         uses: actions/checkout@v2
       - name: Install dependencies
@@ -47,7 +47,7 @@ jobs:
     runs-on: ubuntu-latest
     strategy:
       matrix:
-        python-version: [2.7, 3.5, 3.6, 3.7, 3.8, pypy2, pypy3]
+        python-version: [2.7, 3.5, 3.6, 3.7, 3.8, 3.9, pypy2, pypy3]
     steps:
       - name: Set up Python ${{ matrix.python-version }}
         uses: actions/setup-python@v1
@@ -70,10 +70,10 @@ jobs:
     runs-on: ubuntu-latest
     if: github.event_name == 'pull_request'
     steps:
-      - name: Set up Python 3.8
+      - name: Set up Python 3.9
         uses: actions/setup-python@v1
         with:
-          python-version: 3.8
+          python-version: 3.9
       - name: Checkout ${{ github.base_ref }}
         uses: actions/checkout@v2
         with:
